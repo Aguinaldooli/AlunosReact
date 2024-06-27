@@ -1,7 +1,7 @@
 import './App.css';
 import axios from 'axios';
 import cadastro from './assets/cadastro.png'
-import { Modal, ModalBody, ModalFooter, ModalHeader, } from "reactstrap";
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader, } from "reactstrap";
 import { useState, useEffect } from 'react';
 
 
@@ -21,7 +21,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="Aluno-Container">
       <br />
       <h3>Cadastro de Alunos</h3>
       <header>
@@ -39,7 +39,18 @@ function App() {
           </tr>
         </thead>
         <tbody>
-
+          {data.map(aluno => (
+            <tr key={aluno.id}>
+              <td>{aluno.id}</td>
+              <td>{aluno.nome}</td>
+              <td>{aluno.email}</td>
+              <td>{aluno.idade}</td>
+              <td>
+                <Button className='btn btn-primary'>Editar</Button> {" "}
+                <Button className='btn btn-danger'>Excluir</Button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
