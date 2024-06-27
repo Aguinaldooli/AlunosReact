@@ -156,6 +156,7 @@ function App() {
             <br />
             <label>Idade: </label>
             <input type='text' className='form-control' name="idade" value={alunoSelecionado.idade} onChange={handleChange} />
+            value={alunoSelecionado && alunoSelecionado.idade}
             <br />
           </div>
         </ModalBody>
